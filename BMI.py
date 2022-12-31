@@ -1,5 +1,6 @@
 from PyQt5 import QtCore, QtWidgets
 import traceback
+import sys
 
 
 class Ui_Dialog(object):
@@ -107,3 +108,11 @@ class Ui_Dialog(object):
 
     def errorText(self):
         self.textBrowser.setText("Incorrect Inputs. Please Try again")
+
+
+app = QtWidgets.QApplication(sys.argv)
+Dialog = QtWidgets.QDialog()
+ui = Ui_Dialog()
+ui.setupUi(Dialog)
+Dialog.show()
+sys.exit(app.exec_())
